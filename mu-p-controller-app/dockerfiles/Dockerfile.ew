@@ -1,0 +1,48 @@
+# Copyright (c) 2025 Robert Bosch GmbH.
+#
+# This program and the accompanying materials are made available under the
+# terms of the MIT License which is available at
+# https://opensource.org/licenses/MIT.
+# 
+# SPDX-License-Identifier: MIT
+
+FROM debian:bookworm-slim AS build
+
+RUN apt update && apt install -y \
+    build-essential \
+    git \
+    cmake \
+    nano \
+    htop \
+    libprotobuf-dev \
+    libgrpc-dev \
+    libgrpc++-dev \
+    protobuf-compiler-grpc \
+    libspdlog-dev \
+    libmosquitto-dev \
+    libjsoncpp-dev \
+    libyaml-cpp-dev
+
+
+RUN mkdir /workspace
+COPY . /workspace/haptic
+
+# INstall KUKSA CPP Client
+# Fix later. Currently a static version is mashed directly into the main build
+# script.
+#WORKDIR /workspace
+#RUN git clone --recursive https://github.com/eclipse-kuksa/kuksa-incubation.git
+#WORKDIR /workspace/kuksa-incubation/kuksa-cpp-client/
+#RUN mkdir -p  build && cd build && cmake ..
+#WORKDIR /workspace/kuksa-incubation/kuksa-cpp-client/build
+#RUN make install .
+#RUN cp /usr/local/lib/libkuksaclient.so /usr/lib/
+
+WORKDIR /workspace/haptic
+RUN cd /workspace/haptic/modules/kuksa-incubation && git submodule update --init
+
+# build with compiler optimization:
+RUN /workspace/haptic/build.sh
+#RUN mkdir build && cd build  && cmake .. && make 
+
+CMD ["/workspace/haptic/build/haptic_force_controller", "starterkit_config.yaml"]

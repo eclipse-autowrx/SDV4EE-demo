@@ -1,0 +1,9 @@
+build/
+build_docker/
+deploy/
+log_control_data.csv
+bin/
+measurements/
+bin_right/
+bin_left/
+*.csv
