@@ -1,0 +1,44 @@
+/**
+ * Copyright (c) 2025 Robert Bosch GmbH.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the MIT License which is available at
+ * https://opensource.org/licenses/MIT.
+ *
+ * SPDX-License-Identifier: MIT
+ */
+ 
+/{
+    chosen{
+		zephyr,canbus = &fdcan1;
+	};
+};
+&fdcan1 {
+    status = "okay";
+};
+&mac {
+    status = "okay";
+    pinctrl-names = "default";
+    pinctrl-0 = <&eth_ref_clk_pa1
+               &eth_mdio_pa2
+               &eth_crs_dv_pa7
+               &eth_mdc_pc1
+               &eth_rxd0_pc4
+               &eth_rxd1_pc5
+               &eth_tx_en_pg11
+               &eth_txd0_pg13
+               &eth_txd1_pg12>;
+};
+&mdio {
+    compatible = "st,stm32-mdio";
+    #address-cells = < 0x1 >;
+    #size-cells = < 0x0 >;
+    status = "okay";
+    pinctrl-0 = < &eth_mdio_pa2 &eth_mdc_pc1 >;
+    pinctrl-names = "default";
+    ethernet-phy@0 {
+        compatible = "ethernet-phy";
+        reg = < 0x0 >;
+        status = "okay";
+    };
+};

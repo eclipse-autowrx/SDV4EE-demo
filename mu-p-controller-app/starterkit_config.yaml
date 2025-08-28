@@ -1,0 +1,33 @@
+# Copyright (c) 2025 Robert Bosch GmbH.
+#
+# This program and the accompanying materials are made available under the
+# terms of the MIT License which is available at
+# https://opensource.org/licenses/MIT.
+# 
+# SPDX-License-Identifier: MIT
+---
+buzzwire: false
+priority: 30
+
+# Cycle time for control loop, choose 1 or 2 ms 
+period_ms: 1
+
+# Statistics published to MQTT
+mqtt:
+  host: 192.168.88.10
+  port: 1883
+  user: app1
+  pw: app1password
+
+# Connection to KUKSA data broker
+kuksa:
+  host: 127.0.0.1
+  port: 55555
+  periodic_task_ms: 200
+  task_priority: 10
+
+zone_left:
+  ip: 192.168.88.21
+
+zone_right:
+  ip: 192.168.88.22
