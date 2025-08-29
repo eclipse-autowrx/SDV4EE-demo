@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Robert Bosch GmbH.
+ * Copyright (c) 2025 Bosch Global Software Technologies Private Limited.
  *
  * This program and the accompanying materials are made available under the
  * terms of the MIT License which is available at
@@ -65,3 +65,4 @@ constexpr std::size_t buffer5_size_tx_ = sizeof(ControlData_Tx);
 // filepath for storing measurement data
 extern std::string filepath;
 extern std::chrono::duration<double> timedif;
+

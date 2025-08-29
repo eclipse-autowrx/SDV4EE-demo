@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Robert Bosch GmbH.
+ * Copyright (c) 2025 Bosch Global Software Technologies Private Limited.
  *
  * This program and the accompanying materials are made available under the
  * terms of the MIT License which is available at
@@ -188,3 +188,4 @@ void ReceiverThreadMulti3<receiveData>::receiveMessagesCallbacks() {
     // Start receiving messages using the callback function
     udpcom_.startReceiveCallbacks();
 }
+
