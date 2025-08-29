@@ -1,4 +1,4 @@
-# Copyright (c) 2025 Robert Bosch GmbH.
+# Copyright (c) 2025 Bosch Global Software Technologies Private Limited.
 #
 # This program and the accompanying materials are made available under the
 # terms of the MIT License which is available at
@@ -95,3 +95,4 @@ message(STATUS "Using toolchain.cmake")
 message(STATUS "CMAKE_SYSTEM_PROCESSOR: ${CMAKE_SYSTEM_PROCESSOR}")
 message(STATUS "CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}")
 message(STATUS "CMAKE_CXX_FLAGS: ${CMAKE_CXX_FLAGS}")
+

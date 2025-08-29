@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Robert Bosch GmbH.
+ * Copyright (c) 2025 Bosch Global Software Technologies Private Limited.
  *
  * This program and the accompanying materials are made available under the
  * terms of the MIT License which is available at
@@ -36,3 +36,4 @@ extern uint8_t can_isRunning(void);
 #define MAX_CAN_DLC 8
 
 #endif /* CAN_H */
+

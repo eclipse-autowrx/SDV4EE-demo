@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Robert Bosch GmbH.
+ * Copyright (c) 2025 Bosch Global Software Technologies Private Limited.
  *
  * This program and the accompanying materials are made available under the
  * terms of the MIT License which is available at
@@ -51,4 +51,5 @@ extern std::vector<int> kuksaCPUCore;
 constexpr double u_min = -7.0;  // maximum allowed input. In theory one can go up to 32 but this is enough and reduces
 
 constexpr double u_max = 7.0;
+
 

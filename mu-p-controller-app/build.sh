@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2025 Robert Bosch GmbH.
+# Copyright (c) 2025 Bosch Global Software Technologies Private Limited.
 #
 # This program and the accompanying materials are made available under the
 # terms of the MIT License which is available at
@@ -41,3 +41,4 @@ cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain.cmake \
       
 # Build the project using all available CPU cores
 cmake --build . -- -j$(nproc)
+

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Robert Bosch GmbH.
+ * Copyright (c) 2025 Bosch Global Software Technologies Private Limited.
  *
  * This program and the accompanying materials are made available under the
  * terms of the MIT License which is available at
@@ -61,3 +61,4 @@ void Serializer<ControlData_Tx>::serializeFields(const ControlData_Tx &packet, c
 // Template specializations for MotorData_Rx
 template <>
 void Serializer<MotorData_Rx>::deserializeFields(MotorData_Rx &packet, const char *buffer, std::size_t &offset);
+

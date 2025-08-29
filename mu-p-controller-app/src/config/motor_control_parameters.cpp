@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Robert Bosch GmbH.
+ * Copyright (c) 2025 Bosch Global Software Technologies Private Limited.
  *
  * This program and the accompanying materials are made available under the
  * terms of the MIT License which is available at
@@ -39,3 +39,4 @@ DOFcontroller controllerBuzzWireRight(valuesController.numeratorF, valuesControl
 std::vector<int> receiverCPUCore = {1,2,3,4,5,6,7};
 std::vector<int> senderCPUCore = {1,2,3,4,5,6,7};
 std::vector<int> kuksaCPUCore = {0};
+

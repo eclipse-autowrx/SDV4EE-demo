@@ -1,4 +1,4 @@
-# Copyright (c) 2025 Robert Bosch GmbH.
+# Copyright (c) 2025 Bosch Global Software Technologies Private Limited.
 #
 # This program and the accompanying materials are made available under the
 # terms of the MIT License which is available at
@@ -53,3 +53,4 @@ if(BUILD_HAPTIC_FORCE_CONTROLLER)
 
   install(TARGETS haptic_force_controller DESTINATION ${INSTALL_DIR})
 endif()
+
