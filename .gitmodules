@@ -1,0 +1,3 @@
+[submodule "mu-p-controller-app/modules/kuksa-incubation"]
+	path = mu-p-controller-app/modules/kuksa-incubation
+	url = https://github.com/eclipse-kuksa/kuksa-incubation.git
