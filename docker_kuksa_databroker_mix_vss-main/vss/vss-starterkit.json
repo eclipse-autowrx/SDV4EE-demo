@@ -1,0 +1,224 @@
+{
+    "Vehicle": {
+        "children": {
+            "ADAS": {
+                "children": {
+                    "EBA": {
+                        "children": {
+                            "IsEnabled": {
+                                "datatype": "boolean",
+                                "description": "Indicates if EBA is enabled. True = Enabled. False = Disabled.",
+                                "type": "actuator"
+                            },
+                            "IsEngaged": {
+                                "datatype": "boolean",
+                                "description": "Indicates if EBA is currently regulating brake pressure. True = Engaged. False = Not Engaged.",
+                                "type": "sensor"
+                            }
+                        },
+                        "description": "Emergency Brake Assist (EBA) System signals.",
+                        "type": "branch"
+                    },
+                    "LaneDepartureDetection": {
+                        "children": {
+                            "IsEnabled": {
+                                "datatype": "boolean",
+                                "description": "Indicates if lane departure detection system is enabled. True = Enabled. False = Disabled.",
+                                "type": "actuator"
+                            },
+                            "IsWarning": {
+                                "datatype": "boolean",
+                                "description": "Indicates if lane departure detection registered a lane departure.",
+                                "type": "sensor"
+                            }
+                        },
+                        "description": "Signals from Lane Departure Detection System.",
+                        "type": "branch"
+                    }
+                },
+                "description": "All Advanced Driver Assist Systems data.",
+                "type": "branch"
+            },
+            "Chassis": {
+                "children": {
+                    "SteeringWheel": {
+                        "children": {
+                            "Angle": {
+                                "datatype": "int16",
+                                "description": "Steering wheel angle. Positive = degrees to the left. Negative = degrees to the right.",
+                                "type": "sensor",
+                                "unit": "degrees"
+                            }
+                        },
+                        "description": "Steering wheel signals",
+                        "type": "branch"
+                    }
+                },
+                "description": "All data concerning steering, suspension, wheels, and brakes.",
+                "type": "branch"
+            },
+            "IsMoving": {
+                "datatype": "boolean",
+                "description": "Indicates whether the vehicle is stationary or moving.",
+                "type": "sensor"
+            },
+            "LowVoltageBattery": {
+                "children": {
+                    "CurrentVoltage": {
+                        "datatype": "float",
+                        "description": "Current Voltage of the low voltage battery.",
+                        "type": "sensor",
+                        "unit": "V"
+                    },
+                    "NominalVoltage": {
+                        "comment": "Nominal voltage typically refers to voltage of fully charged battery when delivering rated capacity.",
+                        "datatype": "uint16",
+                        "description": "Nominal Voltage of the battery.",
+                        "type": "attribute",
+                        "unit": "V"
+                    }
+                },
+                "description": "Signals related to low voltage battery.",
+                "type": "branch"
+            },
+            "Powertrain": {
+                "children": {
+                    "ElectricMotor": {
+                        "children": {
+                            "Speed": {
+                                "datatype": "int32",
+                                "description": "Motor rotational speed measured as rotations per minute. Negative values indicate reverse driving mode.",
+                                "type": "sensor",
+                                "unit": "rpm"
+                            }
+                        },
+                        "description": "Electric Motor specific data.",
+                        "type": "branch"
+                    }
+                },
+                "description": "Powertrain data for battery management, etc.",
+                "type": "branch"
+            },
+            "Speed": {
+                "datatype": "float",
+                "description": "Vehicle speed.",
+                "type": "sensor",
+                "unit": "km/h",
+                "max": 10.0,
+                "min": -10.0
+            },
+            "TraveledDistanceSinceStart": {
+                "comment": "A new trip is considered to start when engine gets enabled (e.g. LowVoltageSystemState in ON or START mode). A trip is considered to end when engine is no longer enabled. The signal may however keep the value of the last trip until a new trip is started.",
+                "datatype": "float",
+                "description": "Distance traveled since start of current trip.",
+                "type": "sensor",
+                "unit": "km"
+            },
+            "Counter": {
+                "children": {
+                    "Frequency": {
+                        "datatype": "uint32",
+                        "description": "Frequency in which the counter shall be increased.",
+                        "type": "actuator",
+                        "unit": "ms",
+                        "max": 10000,
+                        "min": 1
+                    },
+                    "Value": {
+                        "datatype": "uint64",
+                        "description": "Value of the counter.",
+                        "type": "sensor"
+                    }
+                },
+                "description": "Counter signals for performance measurements.",
+                "type": "branch"
+            },
+            "Starterkit": {
+                "children": {
+                    "Statistics": {
+                        "children": {
+                            "Zone1": {
+                                "children": {
+                                    "RoundtripLatency": {
+                                        "datatype": "uint16",
+                                        "description": "Latency of the roundtrip.",
+                                        "type": "sensor"
+                                    },
+                                    "RoundtripJitter": {
+                                        "datatype": "uint16",
+                                        "description": "Jitter of the roundtrip.",
+                                        "type": "sensor"
+                                    },
+                                    "WalltimerCycle": {
+                                        "datatype": "uint16",
+                                        "description": "The cycle time of the walltimer.",
+                                        "type": "sensor"
+                                    },
+                                    "WalltimerJitter": {
+                                        "datatype": "uint16",
+                                        "description": "The jitter of the walltimer.",
+                                        "type": "sensor"
+                                    },
+                                    "Torque": {
+                                        "datatype": "float",
+                                        "description": "The torque to be set.",
+                                        "type": "sensor"
+                                    },
+                                    "Angle": {
+                                        "datatype": "float",
+                                        "description": "The motor angle.",
+                                        "type": "sensor"
+                                    }
+                                },
+                                "description": "Zone 1 Statistics",
+                                "type": "branch"
+                            },
+                            "Zone2": {
+                                "children": {
+                                    "RoundtripLatency": {
+                                        "datatype": "uint16",
+                                        "description": "Latency of the roundtrip.",
+                                        "type": "sensor"
+                                    },
+                                    "RoundtripJitter": {
+                                        "datatype": "uint16",
+                                        "description": "Jitter of the roundtrip.",
+                                        "type": "sensor"
+                                    },
+                                    "WalltimerCycle": {
+                                        "datatype": "uint16",
+                                        "description": "The cycle time of the walltimer.",
+                                        "type": "sensor"
+                                    },
+                                    "WalltimerJitter": {
+                                        "datatype": "uint16",
+                                        "description": "The jitter of the walltimer.",
+                                        "type": "sensor"
+                                    },
+                                    "Torque": {
+                                        "datatype": "float",
+                                        "description": "The torque to be set.",
+                                        "type": "sensor"
+                                    },
+                                    "Angle": {
+                                        "datatype": "float",
+                                        "description": "The motor angle.",
+                                        "type": "sensor"
+                                    }
+                                },
+                                "description": "Zone 2 Statistics",
+                                "type": "branch"
+                            }
+                        },
+                        "description": "The statistics for Starterkit",
+                        "type": "branch"
+                    }
+                },
+                "description": "Starterkit topics.",
+                "type": "branch"
+            }
+        },
+        "description": "High-level vehicle data.",
+        "type": "branch"
+    }
+}

@@ -1,0 +1,21 @@
+Vehicle:
+    type: branch
+    description: "Vehicle"
+
+Vehicle.ADAS:
+    type: branch
+    description: "ADAS"
+
+Vehicle.ADAS.LaneAssist:
+    type: branch
+    description: Lane Assist Values
+
+Vehicle.ADAS.LaneAssist.TargetSteeringWheelAngle:
+    type: actuator
+    datatype: int16
+    description: Target for Vehicle.Chassis.SteeringWheel.Angle
+
+Vehicle.ADAS.LaneAssist.SteeringTorque:
+    type: actuator
+    datatype: float
+    description: Torque based on Vehicle.ADAS.LaneAssist.TargetSteeringWheelAngle and Vehicle.Chassis.SteeringWheel.Angle
