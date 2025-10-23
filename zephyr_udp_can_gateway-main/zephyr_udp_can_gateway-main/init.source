@@ -1,0 +1,17 @@
+# Copyright (c) 2025 Robert Bosch GmbH.
+#
+# This program and the accompanying materials are made available under the
+# terms of the MIT License which is available at
+# https://opensource.org/licenses/MIT.
+# 
+# SPDX-License-Identifier: MIT
+
+# You need to source this file first, then you can run e.g.
+# $ source init.sh
+# $ west build
+# $ west build -p always -b arduino_portenta_h7_m7
+# $ west build -p always -b arduino_portenta_h7_m7 && west flash
+#
+
+source ~/zephyrproject/.venv/bin/activate
+source ~/zephyrproject/zephyr/zephyr-env.sh
